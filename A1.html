@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validations Page</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Validation.js"></script>
+</head>
+<body>
+
+
+<h2>Please Check the Password Strength</h2>
+<div class="container">
+    <label for="psw"><b>Password</b></label>
+    <input type="text" id="i" placeholder="Enter Password" name="psw" required>
+
+    <button onclick="validatePassword()">Check</button>
+</div>
+
+<div class="tooltip">Instructions &#x1F6C8;
+    <span class="tooltiptext">
+        <ul style="list-style-type:square">
+            <li>No two consecutive non-alphabets.</li>
+            <li>Should have small letters, capital letters, special characters, and numbers.</li>
+            <li>Length should be between 8 and 16 characters.</li>
+            <li>Current year i.e., 2021 should not be a part of the string.</li>
+            <li>Blank spaces can be part of the password, but they cannot exceed 15% total characters. However, the leading and trailing blank spaces are not allowed.</li>
+        </ul>
+    </span>
+</div>
+</body>
+</html>
