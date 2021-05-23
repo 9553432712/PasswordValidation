@@ -1,31 +1,38 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Validations Page</title>
-    <link rel="stylesheet" href="Style.css">
-    <script src="Validation.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
+<h3>Client Side Computing: JS Single-thread</h3>
+<p>Password Strength Validation</p>
 
-<h2>Please Check the Password Strength</h2>
-<div class="container">
-    <label for="psw"><b>Password</b></label>
-    <input type="text" id="i" placeholder="Enter Password" name="psw" required>
+<div class="container" id="main">
+  <form action="" id="validateForm" onsubmit="return validatePassword()">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required>
 
-    <button onclick="validatePassword()">Check</button>
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+    <input type="submit" value="Submit">
+
+  </form>
 </div>
 
-<div class="tooltip">Instructions &#x1F6C8;
-    <span class="tooltiptext">
-        <ul style="list-style-type:square">
-            <li>No two consecutive non-alphabets.</li>
-            <li>Should have small letters, capital letters, special characters, and numbers.</li>
-            <li>Length should be between 8 and 16 characters.</li>
-            <li>Current year i.e., 2021 should not be a part of the string.</li>
-            <li>Blank spaces can be part of the password, but they cannot exceed 15% total characters. However, the leading and trailing blank spaces are not allowed.</li>
-        </ul>
-    </span>
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="special" class="invalid">A <b>special</b> character</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  <p id="maxLength" class="valid">Maximum <b>16 characters</b></p>
+
 </div>
+<script src ="validation.js">
+</script>
+
 </body>
 </html>
